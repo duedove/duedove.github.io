@@ -14,20 +14,23 @@ def page(fn,title,desc,body,cur=""):
 
 FAQ='''<div class="grid g2 faq" style="margin-top:32px">
 <div><h3>Will my customers know it's automated?</h3><p>Emails come from your business name and sound like you wrote them. Replies go straight to your inbox. You can edit every word.</p></div>
-<div><h3>What if someone already paid?</h3><p>We check with Stripe right before every email. Paid, voided and canceled invoices never get a reminder.</p></div>
-<div><h3>Do you take a cut of what I collect?</h3><p>No. One flat price. Payments go from your customer to your Stripe account as they always have.</p></div>
-<div><h3>Can you move money in my Stripe account?</h3><p>We only read invoices and listen for payments. We never charge, refund or move money.</p></div>
+<div><h3>What if someone already paid?</h3><p>We check with Stripe or QuickBooks right before every email. Paid, voided and canceled invoices never get a reminder.</p></div>
+<div><h3>Do you take a cut of what I collect?</h3><p>No. One flat price. Your customers pay you through Stripe or QuickBooks, the same way they do now.</p></div>
+<div><h3>Can you change anything in my account?</h3><p>No. We only read invoices and customers. We never charge, refund, edit or move money in Stripe or QuickBooks.</p></div>
 <div><h3>Do I need a card for the trial?</h3><p>No. Try it free for 14 days. Add a card only if you want to keep going.</p></div>
-<div><h3>Which invoices does it remind about?</h3><p>Stripe invoices you send by email (with a due date) that are still open. Card-on-file subscriptions are left alone.</p></div>
+<div><h3>Which invoices does it remind about?</h3><p>Open invoices with a due date and a customer email: Stripe invoices sent by email, or QuickBooks Online invoices. Card-on-file subscriptions are left alone.</p></div>
+<div><h3>Do you support Xero?</h3><p>Not yet. Xero is coming next. Email <a href="mailto:support@duedove.com">support@duedove.com</a> and we'll tell you when it's ready.</p></div>
+<div><h3>Can I use Stripe and QuickBooks together?</h3><p>Yes. Connect either or both. Your dashboard combines them.</p></div>
 </div>'''
 
-page("index.html","DueDove: polite reminders for overdue Stripe invoices","DueDove connects to Stripe and sends friendly, scheduled reminders for overdue invoices, in your name. Stops the moment they pay. $59/month, 14-day free trial.",f'''
+page("index.html","DueDove: polite reminders for overdue Stripe and QuickBooks invoices","DueDove connects to Stripe or QuickBooks Online and sends friendly, scheduled reminders for overdue invoices, in your name. Stops the moment they pay. $59/month, 14-day free trial.",f'''
 <section class="hero center"><div class="wrap">
-<div class="eyebrow">For businesses that invoice with Stripe</div>
+<div class="eyebrow">For businesses that invoice with Stripe or QuickBooks</div>
 <h1>Get paid on time without chasing anyone</h1>
-<p class="lead">DueDove sends friendly, well-timed reminders for your unpaid Stripe invoices, in your name. It stops the moment they pay.</p>
+<p class="lead">DueDove sends friendly, well-timed reminders for your unpaid Stripe and QuickBooks invoices, in your name. It stops the moment they pay.</p>
 <div class="actions"><a class="btn lg" href="/signup.html">Start your 14-day free trial</a><a class="btn link" href="#how">See how it works →</a></div>
 <p class="small" style="margin-top:14px">No card needed · Set up in 2 minutes · $59/month after</p>
+<p class="works small">Works with <b>Stripe</b> · <b>QuickBooks Online</b> · <span>Xero coming soon</span></p>
 <div class="mock"><div class="mail"><div class="hd"><b>Acme Plumbing</b> &lt;via DueDove&gt;<br>Subject: <b>Following up on invoice INV-0042</b></div>
 <div class="bd"><p>Hi Jordan,</p><p>I wanted to follow up on invoice INV-0042 for <b>$1,250.00</b>, which was due on November 2.</p><span class="pay">Pay invoice</span><p>If something's holding it up, just reply and let me know. Happy to help.</p><p>Thank you,<br>Acme Plumbing</p></div>
 <div class="ft">Replies go to Acme Plumbing · Unsubscribe link included</div></div>
@@ -35,12 +38,12 @@ page("index.html","DueDove: polite reminders for overdue Stripe invoices","DueDo
 <div class="timeline"><span>3 days before</span><span>Due date</span><span>+3 days</span><span class="paid">Paid ✓ reminders stop</span></div></div></div>
 </div></section>
 <section class="soft" id="how"><div class="wrap"><h2 class="center" style="margin-bottom:32px">How it works</h2><div class="grid g3">
-<div class="card step"><div class="n">1</div><h3>Connect Stripe</h3><p>One click. We see your open invoices. We never move money.</p></div>
+<div class="card step"><div class="n">1</div><h3>Connect Stripe or QuickBooks</h3><p>One click. We see your open invoices. We never change anything or move money.</p></div>
 <div class="card step"><div class="n">2</div><h3>Pick your schedule</h3><p>Start with ours: 3 days before, on the due date, then 3, 7 and 14 days after. Change it anytime.</p></div>
 <div class="card step"><div class="n">3</div><h3>Get paid</h3><p>Customers get a polite note with a pay link. When they pay, reminders stop.</p></div></div></div></section>
 <section><div class="wrap"><div class="grid g4">
 <div><h3>Sounds like you</h3><p class="small">Sent in your business name with three friendly templates you can edit.</p></div>
-<div><h3>Never awkward</h3><p class="small">A live check with Stripe before every email means paid customers aren't bothered.</p></div>
+<div><h3>Never awkward</h3><p class="small">A live balance check before every email means paid customers aren't bothered.</p></div>
 <div><h3>Respectful</h3><p class="small">An unsubscribe link in every email, and a do-not-email list you control.</p></div>
 <div><h3>See the results</h3><p class="small">Your dashboard shows what's overdue and how much came back after a reminder.</p></div></div></div></section>
 <section class="soft"><div class="wrap center"><h2>One simple price</h2><p class="lead">No percentage of your invoices. No setup fees.</p>
@@ -60,30 +63,36 @@ page("signup.html","Start your free trial · DueDove","Create your DueDove accou
 <label for="email">Your work email</label><input id="email" type="email" name="email" required autocomplete="email" placeholder="you@yourbusiness.com">
 <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" type="text" name="website" tabindex="-1" autocomplete="off"></div>
 <button class="btn lg" style="width:100%;margin-top:16px">Email me a sign-in link</button>
-<p class="small" style="margin:14px 0 0">We'll email you a link to sign in. No password to remember. Then connect Stripe and you're done.</p></form>
+<p class="small" style="margin:14px 0 0">We'll email you a link to sign in. No password to remember. Then connect Stripe or QuickBooks and you're done.</p></form>
 <ul class="checks small" style="margin:24px auto 0;max-width:360px"><li>Set up in about 2 minutes</li><li>Reminders go out in your name</li><li>Cancel anytime, in one click</li></ul>
 <p class="small center" style="margin-top:20px">By signing up you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy Policy</a>.</p></div></section>''',"/signup.html")
 
-DRAFT='<p class="draft"><b>Draft.</b> Not yet reviewed. This page will be finalized before launch.</p>'
-page("terms.html","Terms of Service · DueDove","DueDove terms of service (draft).",f'''<div class="wrap legal">{DRAFT}<h1>Terms of Service</h1><p class="small">Last updated: October 16, 2026</p>
-<p>These terms govern your use of DueDove, a service operated by DJ Solutions LLC (“we”, “us”). By creating an account you agree to them.</p>
-<h2>1. What DueDove does</h2><p>DueDove connects to your Stripe account with read access to your invoices and sends payment reminder emails to your customers on a schedule you control. We do not collect debts, hold funds, or move money in your Stripe account.</p>
-<h2>2. Your responsibilities</h2><ul><li>You may only send reminders for genuine invoices you issued to your own customers.</li><li>You are responsible for the content of your reminder templates and for complying with laws that apply to you, including consumer-protection and anti-spam laws (such as CAN-SPAM).</li><li>DueDove is not a debt collector. You must not use it to threaten, harass, or misrepresent legal consequences.</li><li>Keep your login email secure. Anyone with access to it can sign in.</li></ul>
-<h2>3. Subscription and trial</h2><p>DueDove costs $59 per month after a 14-day free trial. If you don't add a payment method by the end of the trial, your subscription ends and reminders stop. Paid subscriptions renew monthly until canceled. You can cancel anytime from Settings; access continues to the end of the paid period. Fees are non-refundable except where required by law.</p>
-<h2>4. Unsubscribes</h2><p>Every reminder includes an unsubscribe link. We honor unsubscribes immediately and you may not circumvent them.</p>
-<h2>5. Availability</h2><p>We aim for reliable service but don't guarantee that every reminder will be sent at a particular time. Reminders are a courtesy, not a legal notice.</p>
-<h2>6. Liability</h2><p>To the extent permitted by law, the service is provided “as is”, and our total liability is limited to the amount you paid us in the 3 months before the claim.</p>
-<h2>7. Termination</h2><p>We may suspend accounts that misuse the service. You can disconnect Stripe and close your account at any time.</p>
-<h2>8. Changes</h2><p>We may update these terms and will notify you by email of material changes.</p>
-<h2>9. Contact</h2><p><a href="mailto:support@duedove.com">support@duedove.com</a></p></div>''')
+DRAFT=''
+page("terms.html","Terms of Service · DueDove","DueDove terms of service.",f'''<div class="wrap legal">{DRAFT}<h1>Terms of Service</h1><p class="small">Last updated: October 16, 2026</p>
+<p>These terms govern your use of DueDove (the “Service”), operated by DJ Solutions LLC, a Colorado limited liability company (“we”, “us”). By creating an account you agree to them. If you use DueDove for a business, you confirm you can accept these terms for it.</p>
+<h2>1. What DueDove does</h2><p>DueDove connects to your Stripe account or QuickBooks Online company with read access to your invoices and customers, and sends payment reminder emails to your customers on a schedule you control. We do not collect debts, hold funds, or create, change, or move anything in your Stripe or QuickBooks account.</p>
+<h2>2. Reminders sent on your behalf</h2><p>Reminders are sent in your business's name, through our email provider, with replies going to the address you choose. You authorize us to send them to the customer email addresses on your open invoices. Every reminder includes an unsubscribe link; we honor unsubscribes immediately and you may not work around them.</p>
+<h2>3. Acceptable use</h2><ul><li>Only send reminders for genuine invoices you issued to your own customers. No spam, marketing, or unsolicited email.</li><li>You are responsible for your relationships with your customers, the accuracy of your invoices, the content of your templates, and complying with laws that apply to you, including anti-spam (such as CAN-SPAM), privacy, and consumer-protection laws.</li><li>DueDove is not a debt collector. Do not use it to threaten, harass, or misstate legal consequences.</li><li>Don't misuse, probe, overload, or try to break the Service, and keep access to your login email secure.</li></ul><p>We may suspend accounts that break these rules, generate complaints, or harm our sending reputation.</p>
+<h2>4. Price, trial and billing</h2><p>DueDove costs a flat $59 per month (plus any applicable taxes) after a 14-day free trial. No card is needed for the trial; if you don't add one, reminders stop when it ends. Paid subscriptions are billed monthly through Stripe and renew until canceled. You can cancel anytime from Settings; you keep access until the end of the period you paid for and won't be charged again. Fees already paid are non-refundable except where the law requires. We'll give at least 30 days' email notice before any price change.</p>
+<h2>5. Connections and disconnecting</h2><p>You can disconnect Stripe or QuickBooks at any time, from DueDove or from inside Stripe or QuickBooks. When you do, reminders for that source stop and we delete its open-invoice data, as described in our <a href="/privacy.html">Privacy Policy</a>.</p>
+<h2>6. Availability</h2><p>We aim for reliable service but don't guarantee that every reminder will be sent or delivered at a particular time, or that any invoice will be paid. Reminders are a courtesy, not a legal notice.</p>
+<h2>7. Disclaimer and liability</h2><p>To the maximum extent permitted by law, the Service is provided “as is” without warranties, we are not liable for indirect or consequential damages or lost revenue, and our total liability is limited to the amounts you paid us in the 12 months before the claim.</p>
+<h2>8. Indemnity</h2><p>You agree to cover claims against us arising from your invoices, your templates, your dealings with your customers, or your breach of these terms.</p>
+<h2>9. Termination</h2><p>You can close your account at any time. We may suspend or end the Service for breach of these terms, or end it for everyone with 30 days' notice and a prorated refund of any prepaid period.</p>
+<h2>10. Governing law</h2><p>These terms are governed by the laws of the State of Colorado, USA, with venue in Colorado courts.</p>
+<h2>11. Changes</h2><p>We may update these terms and will email you about material changes before they take effect.</p>
+<h2>12. Contact</h2><p><a href="mailto:support@duedove.com">support@duedove.com</a></p></div>''')
 
-page("privacy.html","Privacy Policy · DueDove","DueDove privacy policy (draft).",f'''<div class="wrap legal">{DRAFT}<h1>Privacy Policy</h1><p class="small">Last updated: October 16, 2026</p>
-<p>DueDove is operated by DJ Solutions LLC. This policy explains what we collect and why.</p>
-<h2>What we collect</h2><ul><li><b>Account data:</b> your email address, business name and reply-to address.</li><li><b>Stripe data:</b> for open invoices in your connected account: invoice number, amount, due date, status, payment link, and your customer's name and email.</li><li><b>Reminder records:</b> which reminders were sent, when, and to whom, plus unsubscribes.</li><li><b>Billing:</b> handled by Stripe. We never see your full card number.</li></ul>
-<h2>How we use it</h2><p>Only to send the reminders you configure, show your dashboard, and run your subscription. We don't sell data, use advertising trackers, or email your customers for any other purpose.</p>
-<h2>Service providers</h2><p>Stripe (payments and invoice data), our email delivery provider (sending reminders), and our hosting provider in the EU (Hetzner).</p>
-<h2>Your customers</h2><p>For reminders, you are the controller of your customers' data and we process it on your behalf. Your customers can unsubscribe from any reminder in one click.</p>
-<h2>Retention</h2><p>When you disconnect Stripe we delete open-invoice data. Closing your account deletes your data within 30 days, except records we must keep for tax or legal reasons.</p>
-<h2>Security</h2><p>Data is encrypted in transit. Access to your Stripe account uses Stripe's official Connect authorization, which you can revoke anytime.</p>
+page("privacy.html","Privacy Policy · DueDove","DueDove privacy policy.",f'''<div class="wrap legal">{DRAFT}<h1>Privacy Policy</h1><p class="small">Last updated: October 16, 2026</p>
+<p>DueDove is operated by DJ Solutions LLC, a Colorado limited liability company (“we”, “us”). This policy explains what we collect, why, and what happens to it.</p>
+<h2>What we collect</h2><ul><li><b>Account data:</b> your email address, business name, reply-to address, schedule and templates.</li><li><b>Invoice data from Stripe or QuickBooks Online:</b> for your invoices, the invoice number, amount, balance, currency, due date, status and payment link, plus your customer's name and email address.</li><li><b>Reminder records:</b> which reminders were sent, when, to whom, and unsubscribes.</li><li><b>Billing:</b> handled by Stripe. We never see or store your full card number.</li><li><b>Basic logs:</b> request logs (such as IP address and time) for security and troubleshooting.</li></ul>
+<h2>Access to Stripe and QuickBooks</h2><p>You connect through the official authorization flow of Stripe (the DueDove Stripe App) or Intuit QuickBooks Online (OAuth 2.0). We ask only for the access needed to read invoices and customers and to check whether an invoice is still unpaid right before each reminder. We never create, change or delete anything in your accounts and never move money. Access tokens are encrypted at rest. You can revoke access at any time from DueDove, your Stripe Dashboard, or your QuickBooks apps settings.</p>
+<h2>How we use it</h2><p>Only to send the reminders you configure, show your dashboard, provide support, and run your subscription. We don't sell data, use advertising trackers, or email your customers for any other purpose.</p>
+<h2>Your customers' data</h2><p>For reminders, you are the controller of your customers' data and we process it on your behalf, only on your instructions. Reminders go out from our sending domain in your business's name, with replies going to you. Your customers can unsubscribe in one click.</p>
+<h2>Service providers</h2><ul><li><b>Hetzner</b> (Germany): hosting. Our servers and database are in Germany.</li><li><b>Resend</b>: delivering reminder and sign-in emails. Open and click tracking is off.</li><li><b>Stripe</b>: subscription billing, and invoice data if you connect Stripe.</li><li><b>Intuit</b>: invoice data if you connect QuickBooks Online.</li></ul><p>Data may be processed in the United States and the European Union by these providers.</p>
+<h2>Retention and deletion</h2><p>When you disconnect Stripe or QuickBooks, we delete the stored access for it and its open-invoice data right away. We keep a minimal history of paid invoices and reminders sent so your dashboard stays accurate, until you close your account. Closing your account deletes your data within 30 days, except records we must keep for tax or legal reasons. Backups roll off within 30 days after that.</p>
+<h2>Security</h2><p>Data is encrypted in transit (HTTPS) and access tokens are encrypted at rest. Access to production systems is limited.</p>
+<h2>Your rights</h2><p>You can ask to access, correct, export or delete your data by emailing us. If you are your customers' vendor, forward their requests to us and we'll help.</p>
+<h2>Changes</h2><p>We'll email you about material changes before they take effect.</p>
 <h2>Contact</h2><p><a href="mailto:support@duedove.com">support@duedove.com</a></p></div>''')
 print("built")
