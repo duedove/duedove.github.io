@@ -19,7 +19,7 @@ FAQ='''<div class="grid g2 faq" style="margin-top:32px">
 <div><h3>Can you change anything in my account?</h3><p>No. We only read invoices and customers. We never charge, refund, edit or move money in Stripe or QuickBooks.</p></div>
 <div><h3>Do I need a card for the trial?</h3><p>No. Try it free for 14 days. Add a card only if you want to keep going.</p></div>
 <div><h3>Which invoices does it remind about?</h3><p>Open invoices with a due date and a customer email: Stripe invoices sent by email, or QuickBooks Online invoices. Card-on-file subscriptions are left alone.</p></div>
-<div><h3>Do you support Xero?</h3><p>Not yet. Xero is coming next. Email <a href="mailto:support@duedove.com">support@duedove.com</a> and we'll tell you when it's ready.</p></div>
+<div><h3>Do you support Xero?</h3><p>Yes. Connect your Xero organisation from your DueDove dashboard. We check the balance with Xero right before every reminder.</p></div>
 <div><h3>Can I use Stripe and QuickBooks together?</h3><p>Yes. Connect either or both. Your dashboard combines them.</p></div>
 </div>'''
 
@@ -30,7 +30,7 @@ page("index.html","DueDove: polite reminders for overdue Stripe and QuickBooks i
 <p class="lead">DueDove sends friendly, well-timed reminders for your unpaid Stripe and QuickBooks invoices, in your name. It stops the moment they pay.</p>
 <div class="actions"><a class="btn lg" href="/signup.html">Start your 14-day free trial</a><a class="btn link" href="#how">See how it works →</a></div>
 <p class="small" style="margin-top:14px">No card needed · Set up in 2 minutes · $59/month after</p>
-<p class="works small">Works with <b>Stripe</b> · <b>QuickBooks Online</b> · <span>Xero coming soon</span></p>
+<p class="works small">Works with <b>Stripe</b> · <b>QuickBooks Online</b> · <b>Xero</b></p>
 <div class="mock"><div class="mail"><div class="hd"><b>Acme Plumbing</b> &lt;via DueDove&gt;<br>Subject: <b>Following up on invoice INV-0042</b></div>
 <div class="bd"><p>Hi Jordan,</p><p>I wanted to follow up on invoice INV-0042 for <b>$1,250.00</b>, which was due on November 2.</p><span class="pay">Pay invoice</span><p>If something's holding it up, just reply and let me know. Happy to help.</p><p>Thank you,<br>Acme Plumbing</p></div>
 <div class="ft">Replies go to Acme Plumbing · Unsubscribe link included</div></div>
