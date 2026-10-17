@@ -55,7 +55,7 @@ page("pricing.html","Pricing · DueDove","DueDove is $59/month with a 14-day fre
 <section class="hero center" style="padding-bottom:24px"><div class="wrap"><h1>Simple, flat pricing</h1><p class="lead">One plan with everything in it. Try it free for 14 days.</p>
 <div class="card plan pop price-hero" style="text-align:left"><h3>DueDove</h3><div class="price">$59<small>/month</small></div><ul><li>Unlimited invoices and reminders</li><li>Editable schedule and email templates</li><li>Sent in your business name, replies to you</li><li>Live payment check before every email</li><li>Unsubscribe handling and do-not-email list</li><li>Dashboard: overdue, sent and recovered</li></ul><a class="btn" href="/signup.html">Start 14-day free trial</a><p class="small" style="margin:12px 0 0;text-align:center">No card needed to start · Cancel anytime</p></div>
 </div></section>
-<section style="padding-top:24px"><div class="wrap narrow" style="max-width:860px"><h2 class="center">Questions</h2>{FAQ}</div></section>''',"/pricing.html")
+<section style="padding-top:24px"><div class="wrap narrow" style="max-width:860px"><h2 class="center" id="faq">Questions</h2>{FAQ}</div></section>''',"/pricing.html")
 
 page("signup.html","Start your free trial · DueDove","Create your DueDove account. 14 days free, no card needed.",f'''
 <section><div class="wrap" style="max-width:480px"><div class="center"><h1 style="font-size:34px">Start your free trial</h1><p class="lead">14 days free. No card needed.</p></div>
