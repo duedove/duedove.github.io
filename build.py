@@ -14,23 +14,24 @@ def page(fn,title,desc,body,cur=""):
 
 FAQ='''<div class="grid g2 faq" style="margin-top:32px">
 <div><h3>Will my customers know it's automated?</h3><p>Emails come from your business name and sound like you wrote them. Replies go straight to your inbox. You can edit every word.</p></div>
-<div><h3>What if someone already paid?</h3><p>We check with Stripe or QuickBooks right before every email. Paid, voided and canceled invoices never get a reminder.</p></div>
-<div><h3>Do you take a cut of what I collect?</h3><p>No. One flat price. Your customers pay you through Stripe or QuickBooks, the same way they do now.</p></div>
-<div><h3>Can you change anything in my account?</h3><p>No. We only read invoices and customers. We never charge, refund, edit or move money in Stripe or QuickBooks.</p></div>
+<div><h3>What if someone already paid?</h3><p>We check with Stripe or Xero right before every email. Paid, voided and canceled invoices never get a reminder.</p></div>
+<div><h3>Do you take a cut of what I collect?</h3><p>No. One flat price. Your customers pay you through Stripe or Xero, the same way they do now.</p></div>
+<div><h3>Can you change anything in my account?</h3><p>No. We only read invoices and customers. We never charge, refund, edit or move money in Stripe or Xero.</p></div>
 <div><h3>Do I need a card for the trial?</h3><p>No. Try it free for 14 days. Add a card only if you want to keep going.</p></div>
-<div><h3>Which invoices does it remind about?</h3><p>Open invoices with a due date and a customer email: Stripe invoices sent by email, or QuickBooks Online invoices. Card-on-file subscriptions are left alone.</p></div>
+<div><h3>Which invoices does it remind about?</h3><p>Open invoices with a due date and a customer email: Stripe invoices sent by email, or Xero sales invoices. Card-on-file subscriptions are left alone.</p></div>
 <div><h3>Do you support Xero?</h3><p>Yes. Connect your Xero organisation from your DueDove dashboard. We check the balance with Xero right before every reminder.</p></div>
-<div><h3>Can I use Stripe and QuickBooks together?</h3><p>Yes. Connect either or both. Your dashboard combines them.</p></div>
+<div><h3>Can I use Stripe and Xero together?</h3><p>Yes. Connect either or both. Your dashboard combines them.</p></div>
+<div><h3>Do you support QuickBooks Online?</h3><p>Coming soon. QuickBooks Online support is in the works but not available yet. Email support@duedove.com and we'll let you know when it's ready.</p></div>
 </div>'''
 
-page("index.html","DueDove: polite reminders for overdue Stripe and QuickBooks invoices","DueDove connects to Stripe or QuickBooks Online and sends friendly, scheduled reminders for overdue invoices, in your name. Stops the moment they pay. $59/month, 14-day free trial.",f'''
+page("index.html","DueDove: polite reminders for overdue Stripe and Xero invoices","DueDove connects to Stripe or Xero and sends friendly, scheduled reminders for overdue invoices, in your name. Stops the moment they pay. $59/month, 14-day free trial.",f'''
 <section class="hero center"><div class="wrap">
-<div class="eyebrow">For businesses that invoice with Stripe or QuickBooks</div>
+<div class="eyebrow">For businesses that invoice with Stripe or Xero</div>
 <h1>Get paid on time without chasing anyone</h1>
-<p class="lead">DueDove sends friendly, well-timed reminders for your unpaid Stripe and QuickBooks invoices, in your name. It stops the moment they pay.</p>
+<p class="lead">DueDove sends friendly, well-timed reminders for your unpaid Stripe and Xero invoices, in your name. It stops the moment they pay.</p>
 <div class="actions"><a class="btn lg" href="/signup.html">Start your 14-day free trial</a><a class="btn link" href="#how">See how it works →</a></div>
 <p class="small" style="margin-top:14px">No card needed · Set up in 2 minutes · $59/month after</p>
-<p class="works small">Works with <b>Stripe</b> · <b>QuickBooks Online</b> · <b>Xero</b></p>
+<p class="works small">Works with <b>Stripe</b> · <b>Xero</b> · QuickBooks Online (coming soon)</p>
 <div class="mock"><div class="mail"><div class="hd"><b>Acme Plumbing</b> &lt;via DueDove&gt;<br>Subject: <b>Following up on invoice INV-0042</b></div>
 <div class="bd"><p>Hi Jordan,</p><p>I wanted to follow up on invoice INV-0042 for <b>$1,250.00</b>, which was due on November 2.</p><span class="pay">Pay invoice</span><p>If something's holding it up, just reply and let me know. Happy to help.</p><p>Thank you,<br>Acme Plumbing</p></div>
 <div class="ft">Replies go to Acme Plumbing · Unsubscribe link included</div></div>
@@ -38,7 +39,7 @@ page("index.html","DueDove: polite reminders for overdue Stripe and QuickBooks i
 <div class="timeline"><span>3 days before</span><span>Due date</span><span>+3 days</span><span class="paid">Paid ✓ reminders stop</span></div></div></div>
 </div></section>
 <section class="soft" id="how"><div class="wrap"><h2 class="center" style="margin-bottom:32px">How it works</h2><div class="grid g3">
-<div class="card step"><div class="n">1</div><h3>Connect Stripe or QuickBooks</h3><p>One click. We see your open invoices. We never change anything or move money.</p></div>
+<div class="card step"><div class="n">1</div><h3>Connect Stripe or Xero</h3><p>One click. We see your open invoices. We never change anything or move money.</p></div>
 <div class="card step"><div class="n">2</div><h3>Pick your schedule</h3><p>Start with ours: 3 days before, on the due date, then 3, 7 and 14 days after. Change it anytime.</p></div>
 <div class="card step"><div class="n">3</div><h3>Get paid</h3><p>Customers get a polite note with a pay link. When they pay, reminders stop.</p></div></div></div></section>
 <section><div class="wrap"><div class="grid g4">
@@ -63,7 +64,7 @@ page("signup.html","Start your free trial · DueDove","Create your DueDove accou
 <label for="email">Your work email</label><input id="email" type="email" name="email" required autocomplete="email" placeholder="you@yourbusiness.com">
 <div class="hp" aria-hidden="true"><label for="website">Website</label><input id="website" type="text" name="website" tabindex="-1" autocomplete="off"></div>
 <button class="btn lg" style="width:100%;margin-top:16px">Email me a sign-in link</button>
-<p class="small" style="margin:14px 0 0">We'll email you a link to sign in. No password to remember. Then connect Stripe or QuickBooks and you're done.</p></form>
+<p class="small" style="margin:14px 0 0">We'll email you a link to sign in. No password to remember. Then connect Stripe or Xero and you're done.</p></form>
 <ul class="checks small" style="margin:24px auto 0;max-width:360px"><li>Set up in about 2 minutes</li><li>Reminders go out in your name</li><li>Cancel anytime, in one click</li></ul>
 <p class="small center" style="margin-top:20px">By signing up you agree to our <a href="/terms.html">Terms</a> and <a href="/privacy.html">Privacy Policy</a>.</p></div></section>''',"/signup.html")
 
