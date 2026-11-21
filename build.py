@@ -10,6 +10,7 @@ def page(fn,title,desc,body,cur=""):
 <header class="top"><div class="wrap"><a class="logo" href="/">{LOGO}DueDove</a><nav class="nav">{nav("/#how","How it works")}{nav("/pricing.html","Pricing")}<a href="{APP}/login">Log in</a><a class="btn sm" href="/signup.html">Start free trial</a></nav></div></header>
 <main>{body}</main>
 <footer><div class="wrap"><div>© 2026 DJ Solutions LLC · <a href="mailto:support@duedove.com">support@duedove.com</a></div><nav><a href="/pricing.html">Pricing</a><a href="/signup.html">Sign up</a><a href="{APP}/login">Log in</a><a href="/terms.html">Terms</a><a href="/privacy.html">Privacy</a></nav></div></footer><script src="/v.js" defer></script></body></html>'''
+    if fn=="index.html": html=html.replace('<meta charset="utf-8">','<meta charset="utf-8"><meta name="google-site-verification" content="RFGIeIBnM5smYOYH_B7eZoY0Z-Bf4r5h9hKXSjoxwLU">',1)
     OUT.mkdir(parents=True,exist_ok=True);(OUT/fn).write_text(html)
 
 FAQ='''<div class="grid g2 faq" style="margin-top:32px">
